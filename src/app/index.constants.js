@@ -1,5 +1,5 @@
 /* global
-  moment:false
+  moment:false,
   jQuery:false,
   Firebase:false,
   _:false
@@ -17,5 +17,5 @@
     .constant('lodash', _)
 
     // App constants
-    .constant('FIREBASE_ROOT_URL', 'https://angular-firebase-tmp.firebaseio.com');
+    .constant('FIREBASE_ROOT', 'https://angular-firebase-tmp.firebaseio.com');
 })();

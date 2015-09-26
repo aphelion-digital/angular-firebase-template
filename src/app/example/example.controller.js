@@ -3,10 +3,10 @@
 
   angular
     .module('angularFirebaseTemplate')
-    .controller('MainController', MainController);
+    .controller('ExampleController', ExampleController);
 
   /** @ngInject */
-  function MainController() {
+  function ExampleController() {
     var vm = this;
 
     activate();
