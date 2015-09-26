@@ -2,6 +2,11 @@
   'use strict';
 
   angular
-    .module('angularFirebaseTemplate', ['ngAnimate', 'ngCookies', 'ngTouch', 'ngSanitize', 'ui.router']);
-
+    .module('angularFirebaseTemplate', [
+      'ngAnimate',
+      'ngCookies',
+      'ngTouch',
+      'ngSanitize',
+      'ui.router',
+    ]);
 })();

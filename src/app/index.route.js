@@ -7,15 +7,7 @@
 
   /** @ngInject */
   function routeConfig($stateProvider, $urlRouterProvider) {
-    $stateProvider
-      .state('home', {
-        url: '/',
-        templateUrl: 'app/main/main.html',
-        controller: 'MainController',
-        controllerAs: 'main'
-      });
-
+    // This is the redirection route
     $urlRouterProvider.otherwise('/');
   }
-
 })();
