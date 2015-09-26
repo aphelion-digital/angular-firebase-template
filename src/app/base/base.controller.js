@@ -6,11 +6,13 @@
     .controller('BaseController', BaseController);
 
   /** @ngInject */
-  function BaseController($log, $state, Auth, FIREBASE_ROOT) {
+  function BaseController($log, util, $state, Auth, FIREBASE_ROOT) {
     var vm = this;
     var auth;
 
+    vm.errors = util.errors;
     vm.logout = logout;
+    vm.changePassword = changePassword;
 
     activate();
 
@@ -26,8 +28,28 @@
      */
     function logout() {
       auth.$unauth();
-      $log.log('Logged out');
+      $log.log('logged out');
       $state.go('main');
+    }
+
+    /**
+     * Change a users password
+     */
+    function changePassword(form, data) {
+      util.reset();
+
+      if (util.checkForm(form)) {
+        auth.$changePassword({
+            email: data.email,
+            oldPassword: data.oldPassword,
+            newPassword: data.newPassword,
+          })
+          .then(function() {
+            // TODO notify user of success
+            $log.debug('Password changed successfully.');
+          })
+          .catch(util.failure);
+      }
     }
   }
 })();

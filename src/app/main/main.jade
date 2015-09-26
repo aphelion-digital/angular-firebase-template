@@ -1,5 +1,30 @@
-.container
-  .row
-    .twelve.columns
-      h1 Hello
-      p I am using skeleton jade format but i don't think it's installed?
+h1 Errors
+
+ul
+  li(ng-repeat="error in vmMC.errors") {{ error }}
+
+hr
+
+h1 Login
+
+form(name="form", ng-submit="vmMC.login(form, user)")
+  .email
+    input(type="email", name="email", ng-model="user.email", placeholder="Email", required)
+    .error(ng-show="form.email.$invalid && form.email.$touched")
+      p Please enter a email
+  .password
+    input(type="password", name="password", ng-model="user.password", placeholder="Password", required)
+    .error(ng-show="form.password.$invalid && form.password.$touched")
+      p Please enter a password
+  button(type="submit", ng-disabled="form.$invalid") Login
+
+hr
+
+h1 Forgot Password
+
+form(name="form", ng-submit="vmMC.resetPassword(form, user)")
+  .email
+    input(type="email", name="email", ng-model="user.email", placeholder="Email", required)
+    .error(ng-show="form.email.$invalid && form.email.$touched")
+      p Please enter a email
+  button(type="submit", ng-disabled="form.$invalid") Send Reset Email
