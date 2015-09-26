@@ -10,7 +10,7 @@
     $stateProvider
       .state('base.example', {
         url: '/example',
-        templateUrl: 'app/example/views/example.html', // use suffix '.html' instead of '.jade' as it accesses redered version
+        templateUrl: 'app/example/example.html', // use suffix '.html' instead of '.jade' as it accesses redered version
         controller: 'ExampleController',
         controllerAs: 'vmEC',
       });

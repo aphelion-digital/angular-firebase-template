@@ -10,7 +10,7 @@
     $stateProvider
       .state('base', {
         abstract: true,
-        templateUrl: 'app/base/views/base.html', // use suffix '.html' instead of '.jade' as it accesses redered version
+        templateUrl: 'app/base/base.html', // use suffix '.html' instead of '.jade' as it accesses redered version
         controller: 'BaseController',
         controllerAs: 'vmBC',
         data: {
