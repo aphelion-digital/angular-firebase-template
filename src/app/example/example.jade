@@ -1,1 +1,12 @@
-p Hey there
+ul
+  li(ng-repeat="example in vmEC.examples")
+    a(ng-click="vmEC.inspect(example.$id)") {{ example.name }}
+
+form(name="form", ng-submit="vmEC.save(form)")
+  .name
+    input(type="text", name="name", ng-model="vmEC.example.name", placeholder="Name", required)
+    .error(ng-show="form.name.$invalid && form.name.$touched")
+      p Please enter a name
+  button(type="submit", ng-disabled="form.$invalid") Save
+  button(ng-show="vmEC.example.$id", ng-click="vmEC.remove()") Remove
+  button(ng-click="vmEC.create()") New
