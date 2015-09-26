@@ -7,7 +7,11 @@
 
   /** @ngInject */
   function routeConfig($stateProvider, $urlRouterProvider) {
-    // This is the redirection route
+    // Remove '#' from url
+    // Must add <base href="/"> in <head></head> tags aswell
+    // $locationProvider.html5Mode(true);
+
+    // Set default url
     $urlRouterProvider.otherwise('/');
   }
 })();

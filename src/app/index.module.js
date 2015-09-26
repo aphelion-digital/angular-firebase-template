@@ -8,5 +8,6 @@
       'ngTouch',
       'ngSanitize',
       'ui.router',
+      'firebase',
     ]);
 })();

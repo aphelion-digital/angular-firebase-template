@@ -1,4 +1,9 @@
-/* global malarkey:false, toastr:false, moment:false */
+/* global
+  moment:false
+  jQuery:false,
+  Firebase:false,
+  _:false
+*/
 (function() {
   'use strict';
 
@@ -6,7 +11,11 @@
     .module('angularFirebaseTemplate')
 
     // Set all outside libraries as angular constants to be used like services
-    .constant('malarkey', malarkey)
-    .constant('toastr', toastr)
-    .constant('moment', moment);
+    .constant('moment', moment)
+    .constant('jQuery', jQuery)
+    .constant('Firebase', Firebase)
+    .constant('lodash', _)
+
+    // App constants
+    .constant('FIREBASE_ROOT_URL', 'https://angular-firebase-tmp.firebaseio.com');
 })();
